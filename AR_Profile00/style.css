@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* プロフィールカード全体 */
+.profile-card {
+    width: 100%;
+    max-width: 650px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* ヘッダー */
+.card-header {
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    letter-spacing: 1px;
+}
+
+/* ボディ */
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 上部セクション（下部と同じ均等3分割） */
+.top-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    align-items: stretch;
+}
+
+/* 左：基本情報エリア（1カラム分・枠なし） */
+.info-item {
+    border: none !important;
+    background: transparent !important;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-text-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.info-row {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+    display: inline-block;
+    width: 3em;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.colon {
+    font-weight: bold;
+    color: #555;
+    margin-right: 4px;
+}
+
+.value {
+    color: #333;
+}
+
+/* 右：メッセージ枠（2カラム分の幅にピッタリ統一） */
+.message-item {
+    grid-column: span 2;
+    justify-content: flex-start;
+}
+
+.message-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex: 1;
+    width: 100%;
+}
+
+.message-item .item-content {
+    flex: 1;
+    text-align: center;
+}
+
+/* メッセージ枠内の技ちゃん */
+.character-image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.character-image img {
+    max-width: 65px;
+    height: auto;
+    display: block;
+}
+
+/* 中段グリッド */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.profile-grid .grid-item {
+    text-align: center;
+    justify-content: center;
+    min-height: 110px;
+}
+
+/* 枠線の共通スタイル */
+.grid-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 各項目のタイトル */
+.item-title {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 6px;
+    font-weight: bold;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 各項目の本文（共通） */
+.item-content {
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+    word-break: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* 最下部：全幅指定の推しポイント枠（テキスト左揃え） */
+.full-width-item {
+    width: 100%;
+}
+
+.full-width-item .item-content {
+    text-align: left;
+    justify-content: flex-start;
+    line-height: 1.6;
+    padding: 4px 8px;
+}
+
+/* スマホ表示対応 */
+@media (max-width: 520px) {
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .message-item {
+        grid-column: span 1;
+    }
+    
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
