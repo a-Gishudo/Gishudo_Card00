@@ -1,67 +1,137 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT ME</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="profile-card">
-        <header class="card-header">
-            ABOUT ME
-        </header>
+/* 全体の基本設定 */
+* {
+  box-sizing: border-box;
+}
 
-        <div class="card-body">
-            <!-- 上部セクション（左1枠：基本情報＋技ちゃん / 右2枠：メッセージ） -->
-            <div class="top-section">
-                <!-- 左：基本情報と技ちゃん -->
-                <div class="grid-item info-item">
-                    <div class="info-text-stack">
-                        <div class="info-row">
-                            <span class="label name-label">名前</span><span class="colon">：</span>
-                            <span class="value">川原 亜子</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">出身地</span><span class="colon">：</span>
-                            <span class="value">神奈川県</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">血液型</span><span class="colon">：</span>
-                            <span class="value">A型</span>
-                        </div>
-                    </div>
-                    <!-- 技ちゃん -->
-                    <div class="character-image">
-                        <img src="Gichan.gif" alt="技ちゃん">
-                    </div>
-                </div>
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: #f4f4f9;
+  font-family: "Hiragino Maru Gothic ProN", "UD Digital Kyokasho NK-R", "HG丸ｺﾞｼｯｸM-PRO", sans-serif;
+}
 
-                <!-- 右：メッセージ枠 -->
-                <div class="grid-item message-item">
-                    <div class="item-title">メッセージ</div>
-                    <div class="message-inner">
-                        <div class="item-content">本日は技秀堂へ体験に来ていただき、ありがとうございます。今日みなさんが作った名刺とともに、将来『こんなことやったな！』とふと思い出してもらえるような、楽しい体験になってくれれば嬉しいです。</div>
-                    </div>
-                </div>
-            </div>
+/* カード全体のコンテナ */
+.profile-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
-            <!-- 中段グリッドセクション（3分割） -->
-            <div class="profile-grid">
-                <div class="grid-item">
-                    <div class="item-title">性格</div>
-                    <div class="item-content">普段は温厚でマイペース</div>
-                </div>
-                <div class="grid-item">
-                    <div class="item-title">座右の銘</div>
-                    <div class="item-content">謙虚</div>
-                </div>
-                <div class="grid-item">
-                    <div class="item-title">マイブーム</div>
-                    <div class="item-content">ゆで卵と松尾汐恩</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+.card-header {
+  background-color: #a2d2ff;
+  color: #333333;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 各グリッドアイテムの標準スタイル */
+.grid-item {
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fff;
+}
+
+/* 各枠のタイトル：真ん中揃え */
+.item-title {
+  font-weight: bold;
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 本文：1行なら中央配置、複数行で改行される場合は左揃え */
+.item-content {
+  font-size: 11.5px;
+  color: #333;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* --- 上部セクション --- */
+.top-section {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+/* 左：基本情報 */
+.info-item {
+  border: none;
+  padding: 0;
+  flex: 0 0 38%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-text-stack {
+  padding-top: 10px;
+  margin-top: 0;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 11.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ラベル幅を3文字分に固定し、両端揃えで配置 */
+.info-row .label {
+  display: inline-block;
+  width: 3.2em;
+  text-align-last: justify;
+}
+
+/* 「名前」の間隔を全角スペース1つ分「名 前」の見た目に調整 */
+.info-row .name-label {
+  letter-spacing: 0.5em;
+}
+
+/* 右：メッセージ枠 */
+.message-item {
+  flex: 1;
+}
+
+.message-inner .item-content {
+  font-size: 11px;
+  line-height: 1.35;
+  margin: 0;
+  width: 100%;
+}
+
+.character-image {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.character-image img {
+  width: 42px;
+  height: auto;
+}
+
+/* --- 中段グリッド --- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}

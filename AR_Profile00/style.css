@@ -95,16 +95,12 @@ body {
   white-space: nowrap;
 }
 
-/* ラベル幅を3文字分に固定し、両端揃えで配置 */
+/* すべてのラベルを3文字幅に固定し、自動で両端に引き伸ばして均等配置 */
 .info-row .label {
   display: inline-block;
   width: 3.2em;
+  text-align: justify;
   text-align-last: justify;
-}
-
-/* 「名前」の間隔を全角スペース1つ分「名 前」の見た目に調整 */
-.info-row .name-label {
-  letter-spacing: 0.5em;
 }
 
 /* 右：メッセージ枠 */
