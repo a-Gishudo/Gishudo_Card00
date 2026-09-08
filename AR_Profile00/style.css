@@ -71,11 +71,11 @@ body {
   align-items: stretch;
 }
 
-/* 左：基本情報（技ちゃんを下に収めるため縦組みフレックスに設定） */
+/* 左：基本情報 */
 .info-item {
   border: none;
   padding: 0;
-  flex: 0 0 35%;
+  flex: 0 0 38%; /* 幅を少し広げて崩れを防止 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,21 +95,16 @@ body {
   white-space: nowrap;
 }
 
+/* ラベル幅を3文字分に固定し、両端揃えで綺麗に配置 */
 .info-row .label {
   display: inline-block;
-  width: 3.6em;
+  width: 3.2em;
+  text-align-last: justify;
+}
+
+/* 「名前」だけ2文字なので間隔を調整 */
+.info-row .name-label {
   letter-spacing: 0.8em;
-}
-
-/* 左下の技ちゃん配置設定 */
-.character-image {
-  text-align: center;
-  margin-top: 6px;
-}
-
-.character-image img {
-  width: 42px;
-  height: auto;
 }
 
 /* 右：メッセージ枠 */
@@ -122,6 +117,16 @@ body {
   line-height: 1.35;
   margin: 0;
   width: 100%;
+}
+
+.character-image {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.character-image img {
+  width: 42px;
+  height: auto;
 }
 
 /* --- 中段グリッド --- */
