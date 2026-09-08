@@ -68,13 +68,17 @@ body {
 .top-section {
   display: flex;
   gap: 8px;
+  align-items: stretch;
 }
 
-/* 左：基本情報 */
+/* 左：基本情報（技ちゃんを下に収めるため縦組みフレックスに設定） */
 .info-item {
   border: none;
   padding: 0;
-  flex: 0 0 32%;
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info-text-stack {
@@ -82,7 +86,6 @@ body {
   margin-top: 0;
 }
 
-/* コロンの位置を「出身地」と綺麗に揃える設定 */
 .info-row {
   display: flex;
   align-items: center;
@@ -95,6 +98,18 @@ body {
 .info-row .label {
   display: inline-block;
   width: 3.6em;
+  letter-spacing: 0.8em;
+}
+
+/* 左下の技ちゃん配置設定 */
+.character-image {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.character-image img {
+  width: 42px;
+  height: auto;
 }
 
 /* 右：メッセージ枠 */
@@ -102,23 +117,11 @@ body {
   flex: 1;
 }
 
-.message-inner {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-}
-
 .message-inner .item-content {
   font-size: 11px;
-  line-height: 1.3;
+  line-height: 1.35;
   margin: 0;
   width: 100%;
-}
-
-.character-image img {
-  width: 38px;
-  height: auto;
-  flex-shrink: 0;
 }
 
 /* --- 中段グリッド --- */
