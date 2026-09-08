@@ -44,20 +44,27 @@ body {
   background-color: #fff;
 }
 
+/* 各枠のタイトル：真ん中揃え */
 .item-title {
   font-weight: bold;
   font-size: 11px;
   color: #666;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   line-height: 1.2;
+  text-align: center;
 }
 
+/* 本文：1行なら中央配置、複数行で改行される場合は左揃え */
 .item-content {
   font-size: 11.5px;
   color: #333;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* --- 上部セクション（横並び維持） --- */
+/* --- 上部セクション --- */
 .top-section {
   display: flex;
   gap: 8px;
@@ -75,14 +82,22 @@ body {
   margin-top: 0;
 }
 
+/* コロンの位置を「出身地」と綺麗に揃える設定 */
 .info-row {
+  display: flex;
+  align-items: center;
   margin-bottom: 4px;
   font-size: 11.5px;
   line-height: 1.2;
   white-space: nowrap;
 }
 
-/* 右：メッセージ枠（縦長化を最小限に抑制） */
+.info-row .label {
+  display: inline-block;
+  width: 3.6em;
+}
+
+/* 右：メッセージ枠 */
 .message-item {
   flex: 1;
 }
@@ -94,17 +109,19 @@ body {
 }
 
 .message-inner .item-content {
-  font-size: 11px; /* 長文用に文字サイズを最適化 */
-  line-height: 1.3; /* 行間を小さくして全体の縦高さを圧縮 */
+  font-size: 11px;
+  line-height: 1.3;
+  margin: 0;
+  width: 100%;
 }
 
 .character-image img {
-  width: 38px; /* イラストサイズを小さくして文章エリアを確保 */
+  width: 38px;
   height: auto;
   flex-shrink: 0;
 }
 
-/* --- 中段グリッド (スマホでも3分割を維持) --- */
+/* --- 中段グリッド --- */
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
