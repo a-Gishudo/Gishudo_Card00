@@ -62,17 +62,23 @@ body {
   gap: 10px;
 }
 
-/* 左：基本情報（枠線なし） */
+/* 左：基本情報（枠線なし・メッセージ枠と文字の高さを揃える） */
 .info-item {
   border: none;
   padding: 0;
   flex: 1;
 }
 
+.info-text-stack {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 .info-row {
   margin-bottom: 6px;
   font-size: 13px;
-  white-space: nowrap; /* スマホでの意図しない改行を防止 */
+  line-height: 1.2; /* メッセージのタイトルと頭の高さを揃える */
+  white-space: nowrap;
 }
 
 /* 右：メッセージ枠 */
