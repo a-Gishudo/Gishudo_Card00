@@ -20,7 +20,6 @@
     /* 雲ボタンの共通設定 */
     .ar-btn {
       position: fixed;
-      /* 【修正】被りを防ぐため、位置をさらに下げました（60% → 75%） */
       top: 75%; 
       transform: translateY(-50%);
       display: flex;
@@ -62,25 +61,26 @@
 
   <!-- ボタン（別タブ設定） -->
   <a href="http://www.gishudo.co.jp/" target="_blank" rel="noopener noreferrer" class="ar-btn btn-hp">技秀堂HP</a>
-  <a href="../AR_Profile/index.html" target="_blank" rel="noopener noreferrer" class="ar-btn btn-profile">プロフィール</a>
+  <!-- リンク先フォルダ名を AR_Profile00 に修正 -->
+  <a href="../AR_Profile00/index.html" target="_blank" rel="noopener noreferrer" class="ar-btn btn-profile">プロフィール</a>
 
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
     
     <a-marker 
-  type="pattern" 
-  url="pattern-Gichan.patt"[cite: 1]
-  smooth="true" 
-  smoothCount="15" 
-  smoothTolerance="0.05" 
-  smoothThreshold="5">
+      type="pattern" 
+      url="pattern-Gichan.patt" 
+      smooth="true" 
+      smoothCount="15" 
+      smoothTolerance="0.05" 
+      smoothThreshold="5">
       
-  <!-- 常にカメラを向く設定（look-at）のキャラクター画像 -->
-  <a-image src="Gichan_AR.png" position="0 1.5 0" width="2.0" height="3.0" look-at="[camera]"></a-image>
+      <!-- 常にカメラを向く設定（look-at）のキャラクター画像 -->
+      <a-image src="Gichan_AR.png" position="0 1.5 0" width="2.0" height="3.0" look-at="[camera]"></a-image>
 
-</a-marker>
+    </a-marker>
 
     <!-- カメラ設定 -->
     <a-entity camera></a-entity>
-  </scene>
+  </a-scene>
 </body>
 </html>
