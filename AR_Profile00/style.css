@@ -49,6 +49,7 @@ body {
   font-size: 12px;
   color: #666;
   margin-bottom: 4px;
+  line-height: 1.2;
 }
 
 .item-content {
@@ -62,7 +63,7 @@ body {
   gap: 10px;
 }
 
-/* 左：基本情報（枠線なし・メッセージ枠と文字の高さを揃える） */
+/* 左：基本情報（「メッセージ」テキストの頭とピッタリ揃える） */
 .info-item {
   border: none;
   padding: 0;
@@ -70,14 +71,14 @@ body {
 }
 
 .info-text-stack {
-  padding-top: 0;
+  padding-top: 12px; /* 枠線2px + 内側余白10px分ずらして文字位置を上揃え */
   margin-top: 0;
 }
 
 .info-row {
   margin-bottom: 6px;
   font-size: 13px;
-  line-height: 1.2; /* メッセージのタイトルと頭の高さを揃える */
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -95,7 +96,7 @@ body {
 
 .character-image img {
   width: 50px;
-  height: auto;
+  height auto;
 }
 
 /* --- 中段グリッド (スマホでも3分割を維持) --- */
