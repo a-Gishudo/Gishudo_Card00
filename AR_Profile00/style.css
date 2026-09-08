@@ -95,12 +95,24 @@ body {
   white-space: nowrap;
 }
 
-/* すべてのラベルを3文字幅に固定し、自動で両端に引き伸ばして均等配置 */
+/* ラベル幅を3文字分に固定し両端揃え */
 .info-row .label {
   display: inline-block;
   width: 3.2em;
   text-align: justify;
   text-align-last: justify;
+}
+
+/* 技ちゃん画像のスタイル設定 */
+.character-image {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.character-image img {
+  width: 42px;
+  height: auto;
+  display: inline-block;
 }
 
 /* 右：メッセージ枠 */
@@ -113,16 +125,6 @@ body {
   line-height: 1.35;
   margin: 0;
   width: 100%;
-}
-
-.character-image {
-  text-align: center;
-  margin-top: 6px;
-}
-
-.character-image img {
-  width: 42px;
-  height: auto;
 }
 
 /* --- 中段グリッド --- */
