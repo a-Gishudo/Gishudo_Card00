@@ -61,17 +61,18 @@ body {
 .top-section {
   display: flex;
   gap: 10px;
+  align-items: stretch; /* 左右の高さを自動で揃える */
 }
 
-/* 左：基本情報（「メッセージ」テキストの頭とピッタリ揃える） */
+/* 左：基本情報（幅の比率を調整してメッセージ枠だけが縦伸びするのを防ぐ） */
 .info-item {
   border: none;
   padding: 0;
-  flex: 1;
+  flex: 0 0 38%; /* 左側の幅を適正に確保 */
 }
 
 .info-text-stack {
-  padding-top: 12px; /* 枠線2px + 内側余白10px分ずらして文字位置を上揃え */
+  padding-top: 12px; /* メッセージの「タイトル文字」と頭を揃える */
   margin-top: 0;
 }
 
@@ -84,19 +85,24 @@ body {
 
 /* 右：メッセージ枠 */
 .message-item {
-  flex: 2;
+  flex: 1; /* 残りの幅を柔軟に使う */
 }
 
 .message-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* キャラクター画像を右下に寄せる */
   justify-content: space-between;
   gap: 8px;
 }
 
+.message-inner .item-content {
+  line-height: 1.4; /* メッセージ文章の行間を少し詰めて縦伸びを抑制 */
+}
+
 .character-image img {
-  width: 50px;
-  height auto;
+  width: 45px; /* キャラ画像の幅を微調整 */
+  height: auto;
+  flex-shrink: 0;
 }
 
 /* --- 中段グリッド (スマホでも3分割を維持) --- */
